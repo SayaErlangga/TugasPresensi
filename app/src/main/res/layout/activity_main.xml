@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Presensi"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAlignment="center"
+                android:layout_marginTop="60dp"
+                android:id="@+id/txt_presensi"/>
+
+            <DatePicker
+                android:id="@+id/date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_presensi"
+                app:layout_constraintStart_toStartOf="@+id/txt_presensi"
+                app:layout_constraintTop_toBottomOf="@id/txt_presensi"
+                tools:ignore="MissingConstraints" />
+
+            <TimePicker
+                android:id="@+id/time_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:timePickerMode="spinner"
+                app:layout_constraintEnd_toEndOf="@+id/date_picker"
+                app:layout_constraintStart_toStartOf="@+id/date_picker"
+                app:layout_constraintTop_toBottomOf="@id/date_picker"
+                tools:ignore="MissingConstraints" />
+
+            <Spinner
+                android:id="@+id/spinner_alasan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edittext"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/date_picker"
+                app:layout_constraintStart_toStartOf="@+id/date_picker"
+                app:layout_constraintTop_toBottomOf="@id/time_picker" />
+
+            <EditText
+                android:id="@+id/deskripsi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:hint="Deskripsi"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_alasan"
+                app:layout_constraintStart_toStartOf="@+id/spinner_alasan"
+                app:layout_constraintTop_toBottomOf="@id/spinner_alasan" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Submit"
+                app:layout_constraintEnd_toEndOf="@+id/deskripsi"
+                app:layout_constraintStart_toStartOf="@+id/deskripsi"
+                app:layout_constraintTop_toBottomOf="@id/deskripsi"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>
